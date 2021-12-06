@@ -21,6 +21,32 @@ export const signup = createAsyncThunk(
   }
 );
 
+
+export const login = createAsyncThunk(
+    "auth/login",
+    async (user, { rejectWithValue }) => {
+      try {
+          console.log(user)
+        const { data } = await axios.post(
+          "https://api.freerealapi.com/auth/login",
+          user
+        );
+        console.log(data)
+        
+        if(data){
+          saveDataInLocalStorage({...user,token:data.token})
+      }
+        return { ...user, data };
+       
+      } catch (error) {
+          if(error.response.data.message==="NotFound Account"){
+            return rejectWithValue("شما ثبت نام نکرده اید");
+          }
+          return rejectWithValue("ایمیل یا پسورد را اشتباه وارد کرده اید");
+      }
+    }
+  );
+
 const AuthSlice = createSlice({
   name: "auth",
   initialState: {
@@ -47,13 +73,28 @@ const AuthSlice = createSlice({
     [signup.fulfilled]: (state, { payload }) => {
       console.log(payload);
       state.userInfo = payload;
-      state.successMessage = "you successfully signup";
+      state.successMessage = "ثبت نام شما انجام شد";
       state.loading = false;
     },
     [signup.rejected]: (state, { payload, error }) => {
       console.log({ payload, error });
       return { loading: false, erroeMessage: payload, userInfo: {} };
     },
+    [login.pending]: (state) => {
+        state.loading = true;
+        state.successMessage=""
+        state.erroeMessage=""
+      },
+      [login.fulfilled]: (state, { payload }) => {
+        console.log(payload);
+        state.userInfo = payload;
+        state.successMessage = "ورود شما انجام شد";
+        state.loading = false;
+      },
+      [login.rejected]: (state, { payload, error }) => {
+        console.log({ payload, error });
+        return { loading: false, erroeMessage: payload, userInfo: {} };
+      },
   },
 });
 

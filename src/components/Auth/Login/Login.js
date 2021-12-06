@@ -1,8 +1,9 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import Inputs from "../Inputs";
+import { login } from "../../../redux/reducers/AuthReducer";
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -16,22 +17,24 @@ const validationSchema = Yup.object({
 });
 
 const initialValues = {
-  name: "",
   email: "",
   password: "",
 };
 const Login = () => {
   const dispatch = useDispatch();
+  const userInfo = useSelector((state) => state.auth);
   const formik = useFormik({
     initialValues,
     validateOnMount: true,
     validationSchema,
     enableReinitialize: true,
   });
+  console.log(userInfo)
 
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(formik.values);
+    dispatch(login(formik.values))
   };
   return (
     <div>
@@ -39,6 +42,19 @@ const Login = () => {
         <div className="row mt-5 ">
           <div className="col-md-6 offset-md-3">
             <h3 className="text-center">ورود</h3>
+            {userInfo.loading && (
+            <div class="text-center">
+              <div
+                class="spinner-border text-primary my-2"
+                style={{ width: "3rem", height: "3rem" }}
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          )}
+          {userInfo.erroeMessage&&<div className="bg-danger text-center  text-white py-2 rounded my-2">{userInfo.erroeMessage}</div>}
+          {userInfo.successMessage&&<div className="bg-primary text-center text-white py-2 rounded my-2">{userInfo.successMessage}</div>}
             <form onSubmit={submitHandler} novalidate>
               <Inputs name="email" label="ایمیل" type="email" formik={formik} />
               <Inputs name="password" label="پسورد" type="password" formik={formik} />

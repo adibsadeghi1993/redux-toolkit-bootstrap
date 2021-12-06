@@ -29,9 +29,13 @@ const Signup = () => {
   const userInfo = useSelector((state) => state.auth);
   console.log(userInfo);
 
-
   const formik = useFormik({
-    initialValues:{name:userInfo.userInfo?.name,email:userInfo.userInfo?.email,password:userInfo.userInfo?.password}||initialValues,
+    initialValues:
+      {
+        name: userInfo.userInfo?.name,
+        email: userInfo.userInfo?.email,
+        password: userInfo.userInfo?.password,
+      } || initialValues,
     validateOnMount: true,
     validationSchema,
     enableReinitialize: true,
@@ -59,8 +63,16 @@ const Signup = () => {
               </div>
             </div>
           )}
-          {userInfo.errorMessage&&<div className="bg-danger  text-white py-2 rounded my-2">{userInfo.errorMessage}</div>}
-          {userInfo.successMessage&&<div className="bg-primary text-center text-white py-2 rounded my-2">{userInfo.successMessage}</div>}
+          {userInfo.erroeMessage && (
+            <div className="bg-danger  text-white py-2 rounded my-2">
+              {userInfo.erroeMessage}
+            </div>
+          )}
+          {userInfo.successMessage && (
+            <div className="bg-primary text-center text-white py-2 rounded my-2">
+              {userInfo.successMessage}
+            </div>
+          )}
           <form onSubmit={submitHandler} novalidate>
             <Inputs
               name="name"
