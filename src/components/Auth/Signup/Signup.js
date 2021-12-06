@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { signup } from "../../../redux/reducers/AuthReducer";
+import { useNavigate } from "react-router";
 
 import Inputs from "../Inputs";
 import signupImage from "../../../assets/Peach-Illustration-System@4x-p4dbc2wf9kr7ktx00bvzs0sxnfq0v4qmervqvdd17k.png";
@@ -26,8 +27,8 @@ const initialValues = {
 
 const Signup = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate("");
   const userInfo = useSelector((state) => state.auth);
-  console.log(userInfo);
 
   const formik = useFormik({
     initialValues:
@@ -41,12 +42,21 @@ const Signup = () => {
     enableReinitialize: true,
   });
 
+  useEffect(() => {
+    setTimeout(() => {
+      console.log(userInfo.userInfo?.email);
+      if (userInfo.userInfo?.email) {
+        navigate("/");
+      }
+    }, 2000);
+  }, [userInfo.userInfo.email]);
+
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(formik.values);
+
     dispatch(signup(formik.values));
   };
-  console.log(formik.errors);
+
   return (
     <div className="container-xl">
       <div className="row mt-5">

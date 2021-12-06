@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { useDispatch,useSelector } from "react-redux";
 import Inputs from "../Inputs";
 import { login } from "../../../redux/reducers/AuthReducer";
+import { useNavigate } from "react-router";
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -22,6 +23,7 @@ const initialValues = {
 };
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate=useNavigate("")
   const userInfo = useSelector((state) => state.auth);
   const formik = useFormik({
     initialValues,
@@ -29,12 +31,22 @@ const Login = () => {
     validationSchema,
     enableReinitialize: true,
   });
-  console.log(userInfo)
+ 
+  
+  useEffect(() => {
+    setTimeout(() => {
+      console.log(userInfo.userInfo?.email);
+      if (userInfo.userInfo?.email) {
+        navigate("/");
+      }
+    }, 2000);
+  }, [userInfo.userInfo.email]);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(formik.values);
+  
     dispatch(login(formik.values))
+   
   };
   return (
     <div>
