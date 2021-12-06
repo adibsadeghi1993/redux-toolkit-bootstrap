@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { Range, getTrackBackground } from "react-range";
-// import "./styles.css";
-
-
 
 const Test = () => {
     const STEP = 1;
