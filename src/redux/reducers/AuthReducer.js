@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { saveDataInLocalStorage } from "../../services/AuthServices";
 
 export const signup = createAsyncThunk(
   "auth/signup",
@@ -9,16 +10,14 @@ export const signup = createAsyncThunk(
         "https://api.freerealapi.com/auth/register",
         user
       );
+      if(data){
+        saveDataInLocalStorage({...user,token:data.token})
+    }
       return { ...user, data };
+     
     } catch (error) {
       return rejectWithValue(error.response.data.message);
     }
-    // axios
-    //   .post("https://api.freerealapi.com/auth/register", user)
-    //   .then((res) => {
-    //     return { ...user, data: res.data };
-    //   })
-    //   .catch((err) => rejectWithValue([], err.response.data.message));
   }
 );
 
@@ -33,6 +32,12 @@ const AuthSlice = createSlice({
     loading: false,
     erroeMessage: null,
     successMessage: "",
+  },
+
+  reducers:{
+      loginByLocalStorage:(state,{payload})=>{
+          state.userInfo=payload
+      }
   },
 
   extraReducers: {
@@ -53,3 +58,5 @@ const AuthSlice = createSlice({
 });
 
 export default AuthSlice.reducer;
+
+export const {loginByLocalStorage}=AuthSlice.actions

@@ -1,11 +1,21 @@
 import "./App.css";
-import Range from "./components/Range";
+import React, { useEffect } from 'react';
+
+
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Signup from "./components/Auth/Signup/Signup";
 import Login from "./components/Auth/Login/Login";
+import { useDispatch} from "react-redux"
+import { getDataFromLocalStorage } from "./services/AuthServices";
+import { loginByLocalStorage } from "./redux/reducers/AuthReducer";
 
 function App() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+   const data= getDataFromLocalStorage()
+   dispatch(loginByLocalStorage(data))
+  }, [])
   return (
     <div className="App">
      <Routes>
