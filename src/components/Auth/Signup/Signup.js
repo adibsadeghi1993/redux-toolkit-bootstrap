@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { signup } from "../../../redux/reducers/AuthReducer";
 import styles from "./Signup.module.css";
 import Inputs from "../Inputs";
+import signupImage from "../../../assets/Peach-Illustration-System@4x-p4dbc2wf9kr7ktx00bvzs0sxnfq0v4qmervqvdd17k.png"
 
 const validationSchema = Yup.object({
  name: Yup.string()
@@ -58,7 +59,9 @@ const Signup = () => {
              </div>
             </form>
           </div>
-          <div className="col-md-6"></div>
+          <div className="col-md-6">
+              <img className="img-fluid" src={signupImage} alt="عکس ثبت نام"/>
+          </div>
         </div>
       </div>
     </div>
