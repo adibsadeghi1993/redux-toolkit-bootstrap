@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { signup } from "../../../redux/reducers/AuthReducer";
-import styles from "./Signup.module.css";
+
 import Inputs from "../Inputs";
 import signupImage from "../../../assets/Peach-Illustration-System@4x-p4dbc2wf9kr7ktx00bvzs0sxnfq0v4qmervqvdd17k.png"
 
@@ -41,20 +41,20 @@ const Signup = () => {
   };
   console.log(formik.errors)
   return (
-    <div>
+   
     
 
       <div className="container-xl">
         <div className="row mt-5">
           <div className="col-md-6">
-          <h3 className="text-center">Signup</h3>
+          <h3 className="text-center">ثبت نام</h3>
             <form onSubmit={submitHandler} novalidate>
-              <Inputs name="name" type="text" formik={formik}/>
-              <Inputs name="email" type="email" formik={formik}/>
-              <Inputs name="password" type="password" formik={formik}/>
+              <Inputs name="name" label="نام و نام خانوادگی" type="text" formik={formik}/>
+              <Inputs name="email" label="ایمیل" type="email" formik={formik}/>
+              <Inputs name="password" label="پسورد" type="password" formik={formik}/>
              <div className="d-flex justify-content-center">
              <button type="submit" className="btn btn-primary mt-3">
-                submit
+                 ارسال
               </button>
              </div>
             </form>
@@ -64,7 +64,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-    </div>
+   
   );
 };
 

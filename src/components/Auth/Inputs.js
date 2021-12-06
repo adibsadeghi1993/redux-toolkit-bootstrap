@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Inputs = ({name,formik,type}) => {
+const Inputs = ({name,formik,type,label}) => {
     return (
        
              <div className="mt-2">
                 <label for="validationCustom02" class="form-label">
-                  {name}
+                 {label}
                 </label>
                 <input
                   type={type}
