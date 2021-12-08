@@ -9,6 +9,7 @@ import Search from "../components/Search"
 import Checkboxes from "../components/Checkboxes";
 import { useDispatch,useSelector } from "react-redux";
 import { fetchProducts } from "../redux/reducers/ProductReducer";
+import Cart from "../components/Cart";
 
 const Home = () => {
     const dispatch = useDispatch()
@@ -64,10 +65,20 @@ const Home = () => {
 
       return true;
     });
+
+    if(sort && sort==="1"){
+        setFilteredProducts(filteredAllProducts.sort((a,b)=>a.mainPrice-b.mainPrice));
+    }
+    if(sort && sort==="0"){
+        setFilteredProducts(filteredAllProducts.sort((a,b)=>b.mainPrice-a.mainPrice));
+    }
+    if(!sort){
+        setFilteredProducts(filteredAllProducts);  
+    }
     console.log(filteredAllProducts);
 
-    setFilteredProducts(filteredAllProducts);
-  }, [checkedValue, select, range, search]);
+  
+  }, [checkedValue, select, range, search,sort]);
   return (
     <div>
       <Header />
@@ -75,14 +86,17 @@ const Home = () => {
           
 
        <div className="row ">
-           <div className="col-md-2 min-vh-100 border-end">
+           <div className="col-md-3 min-vh-100 border-end">
               <Range range={range} setRange={setRange} max={max}/>
               <Select select={select} setSelect={setSelect}/>
               <Sort sort={sort} setSorted={setSorted}/>
               <Search search={search} setSearch={setSearch}/>
               <Checkboxes setCheckedValue={setCheckedValue} checkedValue={checkedValue}/>
            </div>
-           <div className="col-md-10">
+           <div className="col-md-9">
+               {filteredProducts.map((p)=>{
+                   return <Cart/>
+               })}
 
            </div>
 
