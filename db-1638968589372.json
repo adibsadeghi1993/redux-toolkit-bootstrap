@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "ساعت ",
+      "description": "ساعت مچی مردانه",
+      "discount": "50%",
+      "mainPrice": "250000",
+      "dPrice": "125000",
+      "src": "../src/assets/shoe.jpg"
+    },
+    {
+      "id": 2,
+      "title": "ساعت ",
+      "description": "ساعت مچی مردانه",
+      "discount": "35%",
+      "mainPrice": "400000",
+      "dPrice": "280000",
+      "src": "../src/assets/shoe.jpg"
+    },
+    {
+      "id": 3,
+      "title": "ساعت ",
+      "description": "ساعت مچی مردانه",
+      "discount": "12%",
+      "mainPrice": "100000",
+      "dPrice": "87000",
+      "src": "../src/assets/shoe.jpg"
+    },
+    {
+      "id": 4,
+      "title": "ساعت ",
+      "description": "ساعت مچی مردانه",
+      "discount": "60%",
+      "mainPrice": "1000000",
+      "dPrice": "400000",
+      "src": "../src/assets/shoe.jpg"
+    },
+    {
+      "id": 5,
+      "title": "ساعت ",
+      "description": "ساعت مچی مردانه",
+      "discount": "50%",
+      "mainPrice": "250000",
+      "dPrice": "125000",
+      "src": "../src/assets/shoe.jpg"
+    },
+    {
+      "id": 6,
+      "title": "ساعت ",
+      "description": "ساعت مچی مردانه",
+      "discount": "50%",
+      "mainPrice": "250000",
+      "dPrice": "125000",
+      "src": "../src/assets/shoe.jpg"
+    },
+    {
+      "id": 7,
+      "title": "ساعت ",
+      "description": "ساعت مچی مردانه",
+      "discount": "70%",
+      "mainPrice": "50000",
+      "dPrice": "25000",
+      "src": "../src/assets/shoe.jpg"
+    },
+    {
+      "id": 8,
+      "title": "ساعت ",
+      "description": "ساعت مچی مردانه",
+      "discount": "50%",
+      "mainPrice": "250000",
+      "dPrice": "125000",
+      "src": "../src/assets/shoe.jpg"
+    },
+    {
+      "id": 9,
+      "title": "ساعت ",
+      "description": "ساعت مچی مردانه",
+      "discount": "50%",
+      "mainPrice": "250000",
+      "dPrice": "125000",
+      "src": "../src/assets/shoe.jpg"
+    }
+  ]
+}

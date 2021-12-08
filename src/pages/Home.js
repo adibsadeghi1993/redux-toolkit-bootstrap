@@ -9,7 +9,7 @@ import Search from "../components/Search"
 import Checkboxes from "../components/Checkboxes";
 
 const Home = () => {
-    const [filteredPersons, setFilteredPersons] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
   const [checkedValue, setCheckedValue] = useState([]);
   const [select, setSelect] = useState("");
   const [sort, setSorted] = useState("");
@@ -23,14 +23,16 @@ const Home = () => {
           
 
        <div className="row ">
-           <div className="col-md-2">
+           <div className="col-md-2 min-vh-100 border-end">
               <Range range={range} setRange={setRange}/>
               <Select select={select} setSelect={setSelect}/>
               <Sort sort={sort} setSorted={setSorted}/>
               <Search search={search} setSearch={setSearch}/>
               <Checkboxes setCheckedValue={setCheckedValue} checkedValue={checkedValue}/>
            </div>
-           <div className="col-md-10"></div>
+           <div className="col-md-10">
+
+           </div>
 
        </div>
          
