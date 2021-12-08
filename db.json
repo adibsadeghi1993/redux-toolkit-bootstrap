@@ -7,7 +7,7 @@
             "discount":"50%",
             "mainPrice":"180",
             "dPrice":"120",
-            "src":"../src/assets/shoe.jpg",
+            "src":"imageone",
             "category":"electonic"
 
         },
@@ -18,7 +18,7 @@
             "discount":"35%",
             "mainPrice":"65",
             "dPrice":"36",
-            "src":"../src/assets/shoe.jpg",
+            "src":"imagetow",
             "category":"electonic"
 
         },
@@ -29,73 +29,73 @@
             "discount":"12%",
             "mainPrice":"49",
             "dPrice":"23",
-            "src":"../src/assets/shoe.jpg",
+            "src":"imagethree",
             "category":"electonic"
 
         },
         {
             "id":4,
             "title":"کفش",
-            "description":"ساعت مچی مردانه",
+            "description":"کفش اسپرت پیاده روی",
             "discount":"60%",
             "mainPrice":"85",
             "dPrice":"73",
-            "src":"../src/assets/shoe.jpg",
+            "src":"imagefour",
             "category":"electonic"
 
         },
         {
             "id":5,
             "title":"کفش",
-            "description":"ساعت مچی مردانه",
+            "description":"کفش اسپرت پیاده روی",
             "discount":"50%",
             "mainPrice":"25",
             "dPrice":"15",
-            "src":"../src/assets/shoe.jpg",
+            "src":"imagefive",
             "category":"sport"
 
         },
         {
             "id":6,
             "title":"کفش",
-            "description":"ساعت مچی مردانه",
+            "description":"کفش اسپرت پیاده روی",
             "discount":"50%",
             "mainPrice":"95",
             "dPrice":"43",
-            "src":"../src/assets/shoe.jpg",
+            "src":"imagesix",
             "category":"sport"
 
         },
         {
             "id":7,
             "title":"لپ تاپ",
-            "description":"ساعت مچی مردانه",
+            "description":"لپ تاپ اصل با گارانتی",
             "discount":"70%",
             "mainPrice":"63",
             "dPrice":"33",
-            "src":"../src/assets/shoe.jpg",
+            "src":"imageseven",
             "category":"sport"
 
         },
         {
             "id":8,
             "title":"لپ تاپ",
-            "description":"ساعت مچی مردانه",
+            "description":"لپ تاپ اصل با گارانتی",
             "discount":"50%",
             "mainPrice":"79",
             "dPrice":"26",
-            "src":"../src/assets/shoe.jpg",
+            "src":"imageeight",
             "category":"sport"
 
         },
         {
             "id":9,
             "title":"لپ تاپ",
-            "description":"ساعت مچی مردانه",
+            "description":"لپ تاپ اصل با گارانتی",
             "discount":"50%",
             "mainPrice":"80",
             "dPrice":"65",
-            "src":"../src/assets/shoe.jpg",
+            "src":"imagenie",
             "category":"اسپرت"
 
         }

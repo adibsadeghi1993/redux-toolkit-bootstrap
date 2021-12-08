@@ -28,7 +28,7 @@ const Home = () => {
 
   useEffect(() => {
       
-    // setFilteredProducts(products)
+    setFilteredProducts(products)
     const maximum = Math.max(...products?.map((item) => item.mainPrice));
     setMax(maximum);
     // setRange(maximum)
@@ -86,7 +86,7 @@ const Home = () => {
           
 
        <div className="row ">
-           <div className="col-md-3 min-vh-100 border-end">
+           <div className="col-md-3 filtered_section">
               <Range range={range} setRange={setRange} max={max}/>
               <Select select={select} setSelect={setSelect}/>
               <Sort sort={sort} setSorted={setSorted}/>
@@ -94,9 +94,12 @@ const Home = () => {
               <Checkboxes setCheckedValue={setCheckedValue} checkedValue={checkedValue}/>
            </div>
            <div className="col-md-9">
-               {filteredProducts.map((p)=>{
-                   return <Cart/>
+              <div className="row row-cols-1 gy-3 row-cols-sm-2 row-cols-md-3 row-cols-lg-3">
+              {filteredProducts.map((p)=>{
+                   return <Cart key={p.id} id={p.id} src={p.src} desc={p.description} dPrice={p.dPrice} mainPrice={p.mainPrice}  />
                })}
+              </div>
+             
 
            </div>
 

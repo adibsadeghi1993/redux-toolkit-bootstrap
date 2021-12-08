@@ -10,3 +10,13 @@
   margin: auto;
   margin-top: 40px;
 }
+
+.filtered_section{
+  border: none;
+}
+
+@media(min-width:768px){
+  .filtered_section{
+    border-left: 1px solid rgba(0, 0, 0, 0.1)
+  }
+}
