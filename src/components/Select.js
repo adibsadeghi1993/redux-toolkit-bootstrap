@@ -3,7 +3,7 @@ const SelectComponent = ({ setSelect, select }) => {
     setSelect(e.target.value);
   };
   return (
-    <div className="select mt-4">
+    <div className="select mt-5">
       <select
         onChange={handleChange}
         class="form-select"

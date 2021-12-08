@@ -18,8 +18,9 @@ const Home = () => {
   const [checkedValue, setCheckedValue] = useState([]);
   const [select, setSelect] = useState("");
   const [sort, setSorted] = useState("");
-  const [range, setRange] = useState([27,100]);
+  const [range, setRange] = useState([]);
   const [max, setMax] = useState(null);
+  const [min, setMin] = useState(null);
   const [search, setSearch] = useState("");
   useEffect(() => {
     dispatch(fetchProducts())
@@ -30,7 +31,10 @@ const Home = () => {
       
     setFilteredProducts(products)
     const maximum = Math.max(...products?.map((item) => item.mainPrice));
+    const min = Math.min(...products?.map((item) => item.mainPrice));
     setMax(maximum);
+    setMin(min)
+    setRange([min,maximum])
     // setRange(maximum)
    
   }, [products])
@@ -87,7 +91,7 @@ const Home = () => {
 
        <div className="row ">
            <div className="col-md-3 filtered_section">
-              <Range range={range} setRange={setRange} max={max}/>
+              <Range range={range} setRange={setRange} max={max} min={min}/>
               <Select select={select} setSelect={setSelect}/>
               <Sort sort={sort} setSorted={setSorted}/>
               <Search search={search} setSearch={setSearch}/>

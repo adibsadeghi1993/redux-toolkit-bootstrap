@@ -19,41 +19,20 @@ const Checkboxes = ({setCheckedValue,checkedValue}) => {
        
     }
     return (
-        <div className="mt-4">
-          
-        <label >
-          <input
-            type="checkbox"
-             value="کفش"
-            name="کفش"
-            className="me-1"
-            checked={checkedValue.includes("کفش")}
-            onChange={inputHandler}
-          />
-         کفش
-        </label>
-        <label className="ms-2">
-          <input
-            type="checkbox"
-            name="ساعت"
-            value="ساعت"
-            className="me-1"
-            checked={checkedValue.includes("ساعت")}
-            onChange={inputHandler}
-          />
-         ساعت
-        </label>
-        <label className="ms-2">
-          <input
-            type="checkbox"
-            name="لپ تاپ"
-            value="لپ تاپ"
-            className="me-1"
-            checked={checkedValue.includes("لپ تاپ")}
-            onChange={inputHandler}
-          />
-          لپ تاپ
-        </label>
+        <div className="mt-5">
+            <div><p>محصول خود را انتخاب کنید:</p></div>
+        <div class="form-check form-check-inline">
+  <input class="form-check-input" onChange={(e)=>setCheckedValue(e.target.value)} checked={checkedValue.includes("ساعت")} type="checkbox" id="inlineCheckbox1" value="ساعت"/>
+  <label class="form-check-label" for="inlineCheckbox1">ساعت</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input"  onChange={(e)=>setCheckedValue(e.target.value)} checked={checkedValue.includes("کفش")} type="checkbox" id="inlineCheckbox2" value="کفش" />
+  <label class="form-check-label" for="inlineCheckbox2">کفش</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input"  onChange={(e)=>setCheckedValue(e.target.value)} checked={checkedValue.includes("لپ تاپ")} type="checkbox" id="inlineCheckbox3" value="لپ تاپ" />
+  <label class="form-check-label" for="inlineCheckbox3">لپ تاپ</label>
+</div>
       
       </div>
             

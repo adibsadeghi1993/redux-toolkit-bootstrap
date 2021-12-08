@@ -7,7 +7,7 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-const Test = ({range,setRange,max}) => {
+const Test = ({range,setRange,max,min}) => {
 
 
 
@@ -15,17 +15,6 @@ const Test = ({range,setRange,max}) => {
     setRange(newValue);
   }
 
-  const marks = [
-    {
-      value: 10,
-      label: '10',
-    },
- 
-    {
-      value: {max},
-      label: `${max}`,
-    },
-  ];
  
   
     return (
@@ -37,12 +26,12 @@ const Test = ({range,setRange,max}) => {
         onChange={handleChange}
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
-        min={10}
+        min={min}
         max={max}
-        marks={marks}
+       
       />
     </Box>
-    <p>{range[0]}-{range[1]}</p>
+    <p> <span>رنج قیمت انتخابی شما</span><span className="ms-2 btn btn-outline-primary">{range[0]}-{range[1]}</span></p>
     </div>
     );
   };

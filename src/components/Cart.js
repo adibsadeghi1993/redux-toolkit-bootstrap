@@ -1,7 +1,7 @@
 import React from 'react'
-import watch1 from "../assets/ساعت هوشمند سامسونگ.jpg"
-import watch2 from "../assets/ساعت هوشمند شیاومی.jpg"
-import watch3 from "../assets/ساعت هوشمند مدیسان مدل A1.jpg"
+import watch1 from "../assets/ساعت هوشمند شیاومی.jpg"
+import watch2 from "../assets/ساعت 5.jpg"
+import watch3 from "../assets/ساعت4.jpg"
 import shoe1 from "../assets/shoe.jpg"
 import shoe2 from "../assets/کفش راحتی مردانه مدل PART-SO.jpg"
 import shoe3 from "../assets/کفش مردانه مدل SHEILD.jpg"
@@ -47,7 +47,7 @@ const Cart = ({desc,mainPrice,dPrice,id}) => {
             <div
               class="progress-bar"
               role="progressbar"
-              style={{ width: "25%" }}
+              style={{ width: "25%",backgroundColor:"red !important" }}
               aria-valuenow="25"
               aria-valuemin="0"
               aria-valuemax="100"
@@ -76,7 +76,7 @@ const Cart = ({desc,mainPrice,dPrice,id}) => {
               <span>53% فروش رفته</span>
             </div>
           </div>
-          <button className="btn btn-warning w-100 mt-2">add to cart</button>
+          <button className="btn btn-warning w-100 mt-2 text-dark">اضافه کردن به سبد خرید</button>
         </div>
       </div></div>
     )

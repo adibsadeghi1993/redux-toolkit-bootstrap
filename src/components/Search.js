@@ -2,8 +2,8 @@
 
 const Search = ({setSearch,search}) => {
     return (
-        <div className="mt-4">
-         <input  value={search}  onChange={(e)=>setSearch(e.target.value)} class="form-control" type="text" placeholder="Default input" aria-label="default input example"></input>
+        <div className="mt-5">
+         <input  value={search}  onChange={(e)=>setSearch(e.target.value)} class="form-control" type="text" placeholder="جستجو محصول..." aria-label="default input example"></input>
       
      
         </div>

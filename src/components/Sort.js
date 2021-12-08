@@ -3,8 +3,9 @@ import React from "react";
 
 const Sort = ({ setSorted, sort }) => {
   return (
-    <div className="d-flex align-items-center mt-4">
-      <span>
+    <div className="d-flex align-items-center mt-5">
+        <span>ترتیب قیمت ها</span>
+      <span className="ms-3">
         <label className="mb-1 me-1">نزولی</label>
         <input
           type="radio"
