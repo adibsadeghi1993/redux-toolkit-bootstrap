@@ -19,7 +19,7 @@ const Checkboxes = ({setCheckedValue,checkedValue}) => {
        
     }
     return (
-        <div className="mt-5">
+        <div className="my-5">
             <div><p>محصول خود را انتخاب کنید:</p></div>
         <div class="form-check form-check-inline">
   <input class="form-check-input" onChange={(e)=>setCheckedValue(e.target.value)} checked={checkedValue.includes("ساعت")} type="checkbox" id="inlineCheckbox1" value="ساعت"/>

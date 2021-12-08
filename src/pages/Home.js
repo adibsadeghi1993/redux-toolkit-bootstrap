@@ -24,7 +24,7 @@ const Home = () => {
   const [search, setSearch] = useState("");
   useEffect(() => {
     dispatch(fetchProducts())
-    setFilteredProducts(products)
+    // setFilteredProducts(products)
   }, [])
 
   useEffect(() => {
@@ -90,15 +90,15 @@ const Home = () => {
           
 
        <div className="row ">
-           <div className="col-md-3 filtered_section">
+           <div className=" col-sm-6 col-md-4 col-lg-3 filtered_section">
               <Range range={range} setRange={setRange} max={max} min={min}/>
               <Select select={select} setSelect={setSelect}/>
               <Sort sort={sort} setSorted={setSorted}/>
               <Search search={search} setSearch={setSearch}/>
               <Checkboxes setCheckedValue={setCheckedValue} checkedValue={checkedValue}/>
            </div>
-           <div className="col-md-9">
-              <div className="row row-cols-1 gy-3 row-cols-sm-2 row-cols-md-3 row-cols-lg-3">
+           <div className="col-sm-6 col-md-8 col-lg-9">
+              <div className="row row-cols-1 gy-3 row-cols-sm-1 row-cols-md-2  row-cols-lg-3">
               {filteredProducts.map((p)=>{
                    return <Cart product={p} key={p.id} id={p.id} src={p.src} desc={p.description} dPrice={p.dPrice} mainPrice={p.mainPrice}  />
                })}
