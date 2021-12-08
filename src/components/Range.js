@@ -7,12 +7,12 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-const Test = () => {
+const Test = ({range,setRange}) => {
 
-  const [value, setValue] = React.useState([20, 37]);
+
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setRange(newValue);
   }
 
   const marks = [
@@ -33,7 +33,7 @@ const Test = () => {
         <Box sx={{ width: "100%" }}>
       <Slider
         getAriaLabel={() => 'Temperature range'}
-        value={value}
+        value={range}
         onChange={handleChange}
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
@@ -42,7 +42,7 @@ const Test = () => {
         marks={marks}
       />
     </Box>
-    <p>{value[0]}-{value[1]}</p>
+    <p>{range[0]}-{range[1]}</p>
     </div>
     );
   };

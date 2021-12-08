@@ -19,42 +19,45 @@ const Checkboxes = ({setCheckedValue,checkedValue}) => {
        
     }
     return (
-        <div>
-             <div>
-        <label>
+        <div className="mt-4">
+          
+        <label >
           <input
             type="checkbox"
-             value="London"
-            name="London"
-            checked={checkedValue.includes("London")}
+             value="کفش"
+            name="کفش"
+            className="me-1"
+            checked={checkedValue.includes("کفش")}
             onChange={inputHandler}
           />
-          London
+         کفش
         </label>
-        <label>
+        <label className="ms-2">
           <input
             type="checkbox"
-            name="Paris"
-            value="Paris"
-            checked={checkedValue.includes("Paris")}
+            name="ساعت"
+            value="ساعت"
+            className="me-1"
+            checked={checkedValue.includes("ساعت")}
             onChange={inputHandler}
           />
-          Paris
+         ساعت
         </label>
-        <label>
+        <label className="ms-2">
           <input
             type="checkbox"
-            name="Rome"
-            value="Rome"
-            checked={checkedValue.includes("Rome")}
+            name="لپ تاپ"
+            value="لپ تاپ"
+            className="me-1"
+            checked={checkedValue.includes("لپ تاپ")}
             onChange={inputHandler}
           />
-          Rome
+          لپ تاپ
         </label>
-        <hr />
+      
       </div>
             
-        </div>
+     
     )
 }
 
