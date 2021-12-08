@@ -9,6 +9,8 @@ import Login from "./components/Auth/Login/Login";
 import { useDispatch} from "react-redux"
 import { getDataFromLocalStorage } from "./services/AuthServices";
 import { loginByLocalStorage } from "./redux/reducers/AuthReducer";
+import Test from "./components/Range";
+
 
 function App() {
   const dispatch = useDispatch()
@@ -23,6 +25,7 @@ function App() {
      <Route path="/signup" element={<Signup />}/>
      <Route path="/login" element={<Login />}/>
      </Routes>
+  
     </div>
   );
 }
