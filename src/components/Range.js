@@ -18,19 +18,19 @@ const Test = () => {
   const marks = [
     {
       value: 10,
-      label: '10 هزار تومان',
+      label: '10',
     },
  
     {
       value: 110,
-      label: '110 هزار تومان',
+      label: '110',
     },
   ];
  
   
     return (
     <div>
-        <Box sx={{ width: 300 }}>
+        <Box sx={{ width: "100%" }}>
       <Slider
         getAriaLabel={() => 'Temperature range'}
         value={value}
