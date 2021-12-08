@@ -20,8 +20,16 @@ const productsSlice = createSlice({
       products:[],
       loading: false,
       erroeMessage: null,
+      cartItems:[]
      
     },
+
+    reducer:{
+        addToCart:(state,{payload})=>{
+            state.cartItems.push(payload)
+        }
+    },
+
   
    
     extraReducers: {
