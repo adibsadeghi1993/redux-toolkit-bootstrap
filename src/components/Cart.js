@@ -8,10 +8,17 @@ import shoe3 from "../assets/کفش مردانه مدل SHEILD.jpg"
 import laptop1 from "../assets/لپ تاپ 1.jpg"
 import laptop2 from "../assets/لپ تاپ 2.jpg"
 import laptop3 from "../assets/لپ تاپ 3.jpg"
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../redux/reducers/ProductReducer'
 
 const images=[watch1,watch2,watch3,shoe1,shoe2,shoe3,laptop1,laptop2,laptop3]
 
-const Cart = ({desc,mainPrice,dPrice,id}) => {
+const Cart = ({desc,mainPrice,dPrice,id,product}) => {
+  const dispatch= useDispatch()
+
+    const addHandler=(product)=>{
+     dispatch(addToCart(product))
+    }
     return (
         <div> <div class="card">
         <div class="product_container mb-2 d-flex justify-content-center ">
@@ -76,7 +83,7 @@ const Cart = ({desc,mainPrice,dPrice,id}) => {
               <span>53% فروش رفته</span>
             </div>
           </div>
-          <button className="btn btn-warning w-100 mt-2 text-dark">اضافه کردن به سبد خرید</button>
+          <button onClick={()=>addHandler(product)} className="btn btn-warning w-100 mt-2 text-dark">اضافه کردن به سبد خرید</button>
         </div>
       </div></div>
     )

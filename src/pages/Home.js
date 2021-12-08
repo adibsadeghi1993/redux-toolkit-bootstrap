@@ -100,7 +100,7 @@ const Home = () => {
            <div className="col-md-9">
               <div className="row row-cols-1 gy-3 row-cols-sm-2 row-cols-md-3 row-cols-lg-3">
               {filteredProducts.map((p)=>{
-                   return <Cart key={p.id} id={p.id} src={p.src} desc={p.description} dPrice={p.dPrice} mainPrice={p.mainPrice}  />
+                   return <Cart product={p} key={p.id} id={p.id} src={p.src} desc={p.description} dPrice={p.dPrice} mainPrice={p.mainPrice}  />
                })}
               </div>
              

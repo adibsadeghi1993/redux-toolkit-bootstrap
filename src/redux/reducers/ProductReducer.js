@@ -48,6 +48,8 @@ const productsSlice = createSlice({
    
     },
   });
+
+  export const {addToCart}=productsSlice.actions
   export default productsSlice.reducer;
 
   
