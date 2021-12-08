@@ -49,7 +49,7 @@ const Signup = () => {
         navigate("/");
       }
     }, 2000);
-  }, [userInfo.userInfo.email]);
+  }, [userInfo.userInfo?.email]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -98,7 +98,7 @@ const Signup = () => {
               formik={formik}
             />
             <div className="d-flex justify-content-center">
-              <button type="submit" className="btn btn-primary mt-3">
+              <button type="submit" className="btn btn-primary mt-3 w-100">
                 ارسال
               </button>
             </div>

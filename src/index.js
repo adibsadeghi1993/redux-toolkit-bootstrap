@@ -9,6 +9,8 @@ import {
  
 } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.rtl.min.css"
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min"
+
 
 ReactDOM.render(
   <Provider store={store}>

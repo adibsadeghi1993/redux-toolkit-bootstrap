@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch,useSelector } from "react-redux";
@@ -40,7 +40,7 @@ const Login = () => {
         navigate("/");
       }
     }, 2000);
-  }, [userInfo.userInfo.email]);
+  }, [userInfo.userInfo?.email]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -71,7 +71,7 @@ const Login = () => {
               <Inputs name="email" label="ایمیل" type="email" formik={formik} />
               <Inputs name="password" label="پسورد" type="password" formik={formik} />
               <div className="d-flex justify-content-center">
-                <button type="submit" className="btn btn-primary mt-3">
+                <button type="submit" className="btn btn-primary mt-3 w-100">
                   ارسال
                 </button>
               </div>
