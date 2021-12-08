@@ -15,10 +15,10 @@ const SelectComponent = ({setSelect,select}) => {
     return (
         <div className="select mt-4">
         <select onChange={handleChange} class="form-select" aria-label="Default select example">
-  <option selected style={{fontSize:"0.8rem"}}>انتخاب بر اساس تخفیف</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+  <option selected value="all" style={{fontSize:"0.8rem"}}>دسته بندی</option>
+  <option value="sport"> اسپرت  </option>
+  <option value="electonic">وسایل الکترونیکی</option>
+ 
 </select>
          
             

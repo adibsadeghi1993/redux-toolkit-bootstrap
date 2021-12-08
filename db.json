@@ -2,92 +2,101 @@
     "products":[
         {
             "id":1,
-            "title":"ساعت ",
+            "title":"ساعت",
             "description":"ساعت مچی مردانه",
             "discount":"50%",
-            "mainPrice":"250000",
-            "dPrice":"125000",
-            "src":"../src/assets/shoe.jpg"
+            "mainPrice":"180",
+            "dPrice":"120",
+            "src":"../src/assets/shoe.jpg",
+            "category":"electonic"
 
         },
         {
             "id":2,
-            "title":"ساعت ",
+            "title":"ساعت",
             "description":"ساعت مچی مردانه",
             "discount":"35%",
-            "mainPrice":"400000",
-            "dPrice":"280000",
-            "src":"../src/assets/shoe.jpg"
+            "mainPrice":"65",
+            "dPrice":"36",
+            "src":"../src/assets/shoe.jpg",
+            "category":"electonic"
 
         },
         {
             "id":3,
-            "title":"ساعت ",
+            "title":"ساعت",
             "description":"ساعت مچی مردانه",
             "discount":"12%",
-            "mainPrice":"100000",
-            "dPrice":"87000",
-            "src":"../src/assets/shoe.jpg"
+            "mainPrice":"49",
+            "dPrice":"23",
+            "src":"../src/assets/shoe.jpg",
+            "category":"electonic"
 
         },
         {
             "id":4,
-            "title":"ساعت ",
+            "title":"کفش",
             "description":"ساعت مچی مردانه",
             "discount":"60%",
-            "mainPrice":"1000000",
-            "dPrice":"400000",
-            "src":"../src/assets/shoe.jpg"
+            "mainPrice":"85",
+            "dPrice":"73",
+            "src":"../src/assets/shoe.jpg",
+            "category":"electonic"
 
         },
         {
             "id":5,
-            "title":"ساعت ",
+            "title":"کفش",
             "description":"ساعت مچی مردانه",
             "discount":"50%",
-            "mainPrice":"250000",
-            "dPrice":"125000",
-            "src":"../src/assets/shoe.jpg"
+            "mainPrice":"25",
+            "dPrice":"15",
+            "src":"../src/assets/shoe.jpg",
+            "category":"sport"
 
         },
         {
             "id":6,
-            "title":"ساعت ",
+            "title":"کفش",
             "description":"ساعت مچی مردانه",
             "discount":"50%",
-            "mainPrice":"250000",
-            "dPrice":"125000",
-            "src":"../src/assets/shoe.jpg"
+            "mainPrice":"95",
+            "dPrice":"43",
+            "src":"../src/assets/shoe.jpg",
+            "category":"sport"
 
         },
         {
             "id":7,
-            "title":"ساعت ",
+            "title":"لپ تاپ",
             "description":"ساعت مچی مردانه",
             "discount":"70%",
-            "mainPrice":"50000",
-            "dPrice":"25000",
-            "src":"../src/assets/shoe.jpg"
+            "mainPrice":"63",
+            "dPrice":"33",
+            "src":"../src/assets/shoe.jpg",
+            "category":"sport"
 
         },
         {
             "id":8,
-            "title":"ساعت ",
+            "title":"لپ تاپ",
             "description":"ساعت مچی مردانه",
             "discount":"50%",
-            "mainPrice":"250000",
-            "dPrice":"125000",
-            "src":"../src/assets/shoe.jpg"
+            "mainPrice":"79",
+            "dPrice":"26",
+            "src":"../src/assets/shoe.jpg",
+            "category":"sport"
 
         },
         {
             "id":9,
-            "title":"ساعت ",
+            "title":"لپ تاپ",
             "description":"ساعت مچی مردانه",
             "discount":"50%",
-            "mainPrice":"250000",
-            "dPrice":"125000",
-            "src":"../src/assets/shoe.jpg"
+            "mainPrice":"80",
+            "dPrice":"65",
+            "src":"../src/assets/shoe.jpg",
+            "category":"اسپرت"
 
         }
     ]

@@ -7,7 +7,7 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-const Test = ({range,setRange}) => {
+const Test = ({range,setRange,max}) => {
 
 
 
@@ -22,8 +22,8 @@ const Test = ({range,setRange}) => {
     },
  
     {
-      value: 110,
-      label: '110',
+      value: {max},
+      label: `${max}`,
     },
   ];
  
@@ -38,7 +38,7 @@ const Test = ({range,setRange}) => {
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
         min={10}
-        max={110}
+        max={max}
         marks={marks}
       />
     </Box>
