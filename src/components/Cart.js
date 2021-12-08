@@ -17,6 +17,7 @@ const Cart = ({desc,mainPrice,dPrice,id,product}) => {
   const dispatch= useDispatch()
 
     const addHandler=(product)=>{
+        console.log(product)
      dispatch(addToCart(product))
     }
     return (
