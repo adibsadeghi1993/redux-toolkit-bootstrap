@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import {useSelector} from "react-redux"
+import { getProductsFromLocalStorage } from "../../services/ProductServices";
 
 const Header = () => {
-  const {cartItems} = useSelector(state => state.products)
+  const  cartItems  = getProductsFromLocalStorage();
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light ">

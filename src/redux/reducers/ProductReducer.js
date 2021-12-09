@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { getProductsFromLocalStorage, saveProductsInLocalStorage, saveTotalPriceInLocalStorage } from "../../services/ProductServices";
 
 export const fetchProducts = createAsyncThunk(
   "all/products",
@@ -28,6 +29,7 @@ const productsSlice = createSlice({
     addToCart: (state, { payload }) => {
       const newItem = { ...payload, qty: 1 };
       state.cartItems.push(newItem);
+      saveProductsInLocalStorage(state.cartItems)
     },
     increaseQty: (state, { payload }) => {
       const newCartItems = [...state.cartItems];
@@ -51,8 +53,10 @@ const productsSlice = createSlice({
       }
     },
     TotalPrice:(state,action)=>{
-      const totalPrice=state.cartItems.reduce((a,c)=>a+c.dPrice*c.qty,0)
+      const cartItems=getProductsFromLocalStorage()
+      const totalPrice=cartItems.reduce((a,c)=>a+c.dPrice*c.qty,0)
       state.totalPrice=totalPrice
+      saveTotalPriceInLocalStorage(totalPrice)
     },
   },
 

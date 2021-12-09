@@ -7,3 +7,13 @@ export const getProductsFromLocalStorage=()=>{
     const parsedData=JSON.parse(data)
     return parsedData
 }
+
+export const saveTotalPriceInLocalStorage=(data)=>{
+    localStorage.setItem("totalPrice",JSON.stringify(data))
+}
+
+export const getTotalPriceFromLocalStorage=()=>{
+    const data=localStorage.getItem("totalPrice")
+    const parsedData=JSON.parse(data)
+    return parsedData
+}

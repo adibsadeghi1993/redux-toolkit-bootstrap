@@ -6,15 +6,17 @@ import { Link } from "react-router-dom";
 import "./CartItems.css"
 import { useDispatch } from "react-redux";
 import { TotalPrice } from "../../redux/reducers/ProductReducer";
+import { getProductsFromLocalStorage, getTotalPriceFromLocalStorage } from "../../services/ProductServices";
 
 
 const CartItems = () => {
     const dispatch = useDispatch()
 
-  const { cartItems } = useSelector((state) => state.products);
+  const  cartItems  = getProductsFromLocalStorage();
+  console.log(CartItem)
   
   dispatch(TotalPrice())
-  const { totalPrice } = useSelector((state) => state.products);
+  const  totalPrice  = getTotalPriceFromLocalStorage();
 
  
  
@@ -22,7 +24,7 @@ const CartItems = () => {
     <div>
       <Header />
      <div className="container-xxl px-md-4 mt-4">
-     {cartItems.length === 0 ? (
+     {cartItems?.length === 0 ? (
         <div>
             <p>شما محصولی انتخاب نکرده اید.</p>
             <Link to="/"><span>بازشگت به صفحه محصولات</span></Link>
