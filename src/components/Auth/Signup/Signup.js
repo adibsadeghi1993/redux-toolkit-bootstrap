@@ -4,6 +4,8 @@ import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { signup } from "../../../redux/reducers/AuthReducer";
 import { useNavigate } from "react-router";
+import { useLocation } from "react-router";
+import queryString from "query-string"
 
 import Inputs from "../Inputs";
 import signupImage from "../../../assets/Peach-Illustration-System@4x-p4dbc2wf9kr7ktx00bvzs0sxnfq0v4qmervqvdd17k.png";
@@ -25,9 +27,16 @@ const initialValues = {
   password: "",
 };
 
+
+
+
 const Signup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate("");
+  const location=useLocation()
+  const query=queryString.parse(location.search);
+
+  console.log(query)
   const userInfo = useSelector((state) => state.auth);
 
   const formik = useFormik({
@@ -45,8 +54,10 @@ const Signup = () => {
   useEffect(() => {
     setTimeout(() => {
       console.log(userInfo.userInfo?.email);
-      if (userInfo.userInfo?.email) {
+      if (userInfo.userInfo?.email && !query.from) {
         navigate("/");
+      }else{
+        navigate("/checkout");
       }
     }, 2000);
   }, [userInfo.userInfo?.email]);
