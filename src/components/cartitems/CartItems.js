@@ -30,6 +30,7 @@ const CartItems = () => {
                 id={item.id}
                 desc={item.description}
                 mainPrice={item.mainPrice}
+                qty={item.qty}
               />
             );
           })}
