@@ -4,13 +4,20 @@ import { useSelector } from "react-redux";
 import Header from "../Layout/Header";
 import { Link } from "react-router-dom";
 import "./CartItems.css"
+import { useDispatch } from "react-redux";
+import { TotalPrice } from "../../redux/reducers/ProductReducer";
+
 
 const CartItems = () => {
+    const dispatch = useDispatch()
 
   const { cartItems } = useSelector((state) => state.products);
+  
+  dispatch(TotalPrice())
+  const { totalPrice } = useSelector((state) => state.products);
 
-  const totalPrice=cartItems.reduce((a,c)=>a+c.dPrice*c.qty,0)
-  console.log(totalPrice)
+ 
+ 
   return (
     <div>
       <Header />
@@ -43,8 +50,7 @@ const CartItems = () => {
   </div>
   <div class="card-body">
     <h5 class="card-title">مجموع قیمت ها:{totalPrice}</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <Link to="/signup?from=checkout" class="btn btn-primary">ثبت سفارش</Link>
+    <Link to="/signup?from=checkout" class="btn btn-primary mt-3">ثبت سفارش</Link>
   </div>
  
 </div>

@@ -56,9 +56,11 @@ const Signup = () => {
       console.log(userInfo.userInfo?.email);
       if (userInfo.userInfo?.email && !query.from) {
         navigate("/");
-      }else{
+      }
+      if (userInfo.userInfo?.email && query.from) {
         navigate("/checkout");
       }
+
     }, 2000);
   }, [userInfo.userInfo?.email]);
 
