@@ -5,8 +5,8 @@
             "title":"ساعت",
             "description":"ساعت مچی مردانه",
             "discount":"50%",
-            "mainPrice":"180",
-            "dPrice":"120",
+            "mainPrice":180,
+            "dPrice":120,
             "src":"imageone",
             "category":"electonic"
 
@@ -16,8 +16,8 @@
             "title":"ساعت",
             "description":"ساعت مچی مردانه",
             "discount":"35%",
-            "mainPrice":"65",
-            "dPrice":"36",
+            "mainPrice":65,
+            "dPrice":36,
             "src":"imagetow",
             "category":"electonic"
 
@@ -27,8 +27,8 @@
             "title":"ساعت",
             "description":"ساعت مچی مردانه",
             "discount":"12%",
-            "mainPrice":"49",
-            "dPrice":"23",
+            "mainPrice":49,
+            "dPrice":23,
             "src":"imagethree",
             "category":"electonic"
 
@@ -38,8 +38,8 @@
             "title":"کفش",
             "description":"کفش اسپرت پیاده روی",
             "discount":"60%",
-            "mainPrice":"85",
-            "dPrice":"73",
+            "mainPrice":85,
+            "dPrice":73,
             "src":"imagefour",
             "category":"electonic"
 
@@ -49,8 +49,8 @@
             "title":"کفش",
             "description":"کفش اسپرت پیاده روی",
             "discount":"50%",
-            "mainPrice":"25",
-            "dPrice":"15",
+            "mainPrice":25,
+            "dPrice":15,
             "src":"imagefive",
             "category":"sport"
 
@@ -60,8 +60,8 @@
             "title":"کفش",
             "description":"کفش اسپرت پیاده روی",
             "discount":"50%",
-            "mainPrice":"95",
-            "dPrice":"43",
+            "mainPrice":95,
+            "dPrice":43,
             "src":"imagesix",
             "category":"sport"
 
@@ -71,8 +71,8 @@
             "title":"لپ تاپ",
             "description":"لپ تاپ اصل با گارانتی",
             "discount":"70%",
-            "mainPrice":"63",
-            "dPrice":"33",
+            "mainPrice":63,
+            "dPrice":33,
             "src":"imageseven",
             "category":"sport"
 
@@ -82,8 +82,8 @@
             "title":"لپ تاپ",
             "description":"لپ تاپ اصل با گارانتی",
             "discount":"50%",
-            "mainPrice":"79",
-            "dPrice":"26",
+            "mainPrice":79,
+            "dPrice":26,
             "src":"imageeight",
             "category":"sport"
 
@@ -93,8 +93,8 @@
             "title":"لپ تاپ",
             "description":"لپ تاپ اصل با گارانتی",
             "discount":"50%",
-            "mainPrice":"80",
-            "dPrice":"65",
+            "mainPrice":80,
+            "dPrice":65,
             "src":"imagenie",
             "category":"اسپرت"
 

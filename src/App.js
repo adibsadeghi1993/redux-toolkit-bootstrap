@@ -10,6 +10,7 @@ import { useDispatch} from "react-redux"
 import { getDataFromLocalStorage } from "./services/AuthServices";
 import { loginByLocalStorage } from "./redux/reducers/AuthReducer";
 import Test from "./components/Range";
+import CartItems from "./components/cartitems/CartItems";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
      <Route path="/" element={<Home />}/>
      <Route path="/signup" element={<Signup />}/>
      <Route path="/login" element={<Login />}/>
-     <Route path="/cartItems" element={<Login />}/>
+     <Route path="/cartItems" element={<CartItems />}/>
      </Routes>
   
     </div>

@@ -67,7 +67,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item ms-2">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/cartItems">
                   <span className="position-relative">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
