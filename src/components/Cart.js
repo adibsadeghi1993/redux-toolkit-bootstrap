@@ -10,6 +10,7 @@ import laptop2 from "../assets/لپ تاپ 2.jpg"
 import laptop3 from "../assets/لپ تاپ 3.jpg"
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../redux/reducers/ProductReducer'
+import "./Cart.css"
 
 const images=[watch1,watch2,watch3,shoe1,shoe2,shoe3,laptop1,laptop2,laptop3]
 
@@ -55,7 +56,7 @@ const Cart = ({desc,mainPrice,dPrice,id,product}) => {
             <div
               class="progress-bar"
               role="progressbar"
-              style={{ width: "25%",backgroundColor:"red !important" }}
+              style={{ width: "25%"}}
               aria-valuenow="25"
               aria-valuemin="0"
               aria-valuemax="100"

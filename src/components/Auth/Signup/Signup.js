@@ -57,11 +57,12 @@ const Signup = () => {
       if (userInfo.userInfo?.email && !query.from) {
         navigate("/");
       }
-      if (userInfo.userInfo?.email && query.from) {
-        navigate("/checkout");
-      }
+     
 
     }, 2000);
+    if (userInfo.userInfo?.email && query.from) {
+      navigate("/checkout");
+    }
   }, [userInfo.userInfo?.email]);
 
   const submitHandler = (e) => {

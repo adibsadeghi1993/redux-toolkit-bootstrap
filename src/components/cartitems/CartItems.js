@@ -12,10 +12,13 @@ import { getProductsFromLocalStorage, getTotalPriceFromLocalStorage } from "../.
 const CartItems = () => {
     const dispatch = useDispatch()
 
-  const  cartItems  = getProductsFromLocalStorage();
+    const {cartItems:allProducts} = useSelector(state => state.products)
+  const  cartItems  =allProducts;
+//   const cartItems=getProductsFromLocalStorage()
   console.log(CartItem)
   
   dispatch(TotalPrice())
+//   const {totalPrice} = useSelector(state => state.products)
   const  totalPrice  = getTotalPriceFromLocalStorage();
 
  
@@ -27,10 +30,10 @@ const CartItems = () => {
      {cartItems?.length === 0 ? (
         <div>
             <p>شما محصولی انتخاب نکرده اید.</p>
-            <Link to="/"><span>بازشگت به صفحه محصولات</span></Link>
+            <Link to="/" className="text-decoration-none"><span>بازشگت به صفحه محصولات</span></Link>
         </div>
       ) : (
-        <div className="row gx-3 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 px-3">
+        <div className="row gx-3 gy-3 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 px-md-3">
           {cartItems.map((item) => {
             return (
               <CartItem
