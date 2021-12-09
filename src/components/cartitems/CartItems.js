@@ -9,7 +9,7 @@ const CartItems = () => {
 
   const { cartItems } = useSelector((state) => state.products);
 
-  const totalPrice=cartItems.reduce((a,c)=>a+c.dPrice,0)
+  const totalPrice=cartItems.reduce((a,c)=>a+c.dPrice*c.qty,0)
   console.log(totalPrice)
   return (
     <div>
@@ -36,7 +36,7 @@ const CartItems = () => {
           })}
         </div>
       )}
-      {cartItems.length>0? <div className="px-3 mt-4">
+      {cartItems.length>0? <div className="px-3 my-4">
         <div class="card  checkout text-center">
   <div class="card-header">
     تسویه حساب
@@ -44,7 +44,7 @@ const CartItems = () => {
   <div class="card-body">
     <h5 class="card-title">مجموع قیمت ها:{totalPrice}</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="/" class="btn btn-primary">Go somewhere</a>
+    <Link to="/signup?from=checkout" class="btn btn-primary">ثبت سفارش</Link>
   </div>
  
 </div>

@@ -28,7 +28,34 @@ const productsSlice = createSlice({
         addToCart:(state,{payload})=>{
           const newItem={...payload,qty:1}
             state.cartItems.push(newItem)
-        }
+        },
+        increaseQty:(state,{payload})=>{
+          const newCartItems=[...state.cartItems]
+           const findItem=newCartItems.find((item)=>item.id===payload)
+           const newItem={...findItem,qty:findItem.qty+1}
+           const index=newCartItems.indexOf(findItem)
+           newCartItems[index]=newItem
+           state.cartItems=newCartItems
+
+          
+        },
+        decreaseQty:(state,{payload})=>{
+          const newCartItems=[...state.cartItems]
+           const findItem=newCartItems.find((item)=>item.id===payload)
+           const newItem={...findItem,qty:findItem.qty-1}
+           const index=newCartItems.indexOf(findItem)
+           if(newItem.qty<1){
+             const updatedCart=newCartItems.filter(item=>item.id !== payload)
+             state.cartItems=updatedCart
+           }else{
+            newCartItems[index]=newItem
+            state.cartItems=newCartItems
+           }
+       
+
+          
+        },
+
     },
 
   
@@ -50,7 +77,7 @@ const productsSlice = createSlice({
     },
   });
 
-  export const {addToCart}=productsSlice.actions
+  export const {addToCart, increaseQty,decreaseQty}=productsSlice.actions
   export default productsSlice.reducer;
 
   
