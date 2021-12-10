@@ -11,7 +11,8 @@ const productsSlice = createSlice({
     loading: false,
     erroeMessage: null,
     cartItems: [],
-    totalPrice:0
+    totalPrice:0,
+    filteredProducts:[]
   },
 
   reducers: {
@@ -76,10 +77,49 @@ const productsSlice = createSlice({
       state.totalPrice=totalPrice
       saveTotalPriceInLocalStorage(totalPrice)
     },
+    filterProducts:(state,{payload})=>{
+      const mainProducts = [...state.products];
+       const {range,select,sort,search,checkedValue}=payload
+
+       const filteredAllProducts = mainProducts.filter((product) => {
+        if (search && !product.title.includes(search)) {
+          return false;
+        }
+        if (checkedValue?.length && !checkedValue.includes(product.title)) {
+          return false;
+        }
+        if (range && product.mainPrice < range[0] ) {
+          return false;
+        }
+        if (range && product.mainPrice > range[1] ) {
+          return false;
+        }
+        if (select === "all") {
+          return true;
+        }
+        if (select && product.category !== select) {
+          return false;
+        }
+  
+        return true;
+      });
+  
+      if(sort && sort==="1"){
+        const sortedAsendingProducts=filteredAllProducts.sort((a,b)=>a.dPrice-b.dPrice)
+         state.filteredProducts=sortedAsendingProducts
+      }
+      if(sort && sort==="0"){
+        const sortedDesendingProducts=filteredAllProducts.sort((a,b)=>b.dPrice-a.dPrice)
+          state.filteredProducts=sortedDesendingProducts
+      }
+      if(!sort){
+        state.filteredProducts=filteredAllProducts  
+      }
+    }
   },
 
 
 });
 
-export const {getAllProducts, addToCart, increaseQty,decreaseQty,TotalPrice} = productsSlice.actions;
+export const {getAllProducts, addToCart, increaseQty,decreaseQty,TotalPrice,filterProducts} = productsSlice.actions;
 export default productsSlice.reducer;
