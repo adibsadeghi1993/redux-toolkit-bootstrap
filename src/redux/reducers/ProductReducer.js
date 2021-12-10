@@ -1,19 +1,8 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice } from "@reduxjs/toolkit";
+
 import { getProductsFromLocalStorage, saveProductsInLocalStorage, saveTotalPriceInLocalStorage } from "../../services/ProductServices";
 
-export const fetchProducts = createAsyncThunk(
-  "all/products",
-  async (______, { rejectWithValue }) => {
-    try {
-      const { data } = await axios.get("http://localhost:4000/products");
-      console.log(data);
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.response.data.message);
-    }
-  }
-);
+
 
 const productsSlice = createSlice({
   name: "products",
@@ -26,6 +15,9 @@ const productsSlice = createSlice({
   },
 
   reducers: {
+    getAllProducts:(state,{payload})=>{
+
+    },
     addToCart: (state, { payload }) => {
       console.log(payload)
       const exist=state.cartItems.findIndex(item=>item.id===payload.id)
@@ -86,20 +78,7 @@ const productsSlice = createSlice({
     },
   },
 
-  extraReducers: {
-    [fetchProducts.pending]: (state) => {
-      state.loading = true;
-    },
-    [fetchProducts.fulfilled]: (state, { payload }) => {
-      console.log(payload);
-      state.products = payload;
-      state.loading = false;
-    },
-    [fetchProducts.rejected]: (state, { payload, error }) => {
-      console.log({ payload, error });
-      return { loading: false, erroeMessage: payload, products: [] };
-    },
-  },
+
 });
 
 export const { addToCart, increaseQty,decreaseQty,TotalPrice} = productsSlice.actions;
