@@ -8,8 +8,9 @@ import Sort from "../components/Sort"
 import Search from "../components/Search"
 import Checkboxes from "../components/Checkboxes";
 import { useDispatch,useSelector } from "react-redux";
-import { fetchProducts } from "../redux/reducers/ProductReducer";
+import { getAllProducts } from "../redux/reducers/ProductReducer";
 import Cart from "../components/Cart";
+import { productList } from "../productlist/productList";
 
 const Home = () => {
     const dispatch = useDispatch()
@@ -23,8 +24,8 @@ const Home = () => {
   const [min, setMin] = useState(null);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    dispatch(fetchProducts())
-    // setFilteredProducts(products)
+   dispatch(getAllProducts(productList))
+    
   }, [])
 
   useEffect(() => {
