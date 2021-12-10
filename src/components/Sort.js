@@ -4,7 +4,7 @@ import React from "react";
 const Sort = ({ setSorted, sort }) => {
   return (
     <div className="d-flex flex-wrap  mt-5">
-        <div><span className="me-2">ترتیب قیمت ها</span></div>
+        <div><span className="me-3">ترتیب قیمت ها</span></div>
      
   
       <div class="form-check form-check-inline">
