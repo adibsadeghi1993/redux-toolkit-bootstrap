@@ -52,19 +52,22 @@ const Home = () => {
     );
   }, [checkedValue, select, range, search, sort]);
   return (
-    <div>
+    <div className="app">
       <Header />
-      <div className="container-xxl  px-4  mt-4">
+      <div className="container-xxl  px-4  mt-4 ">
         <div className="row ">
-          <div className=" col-sm-6 col-md-4 col-lg-3 filtered_section">
-            <Range range={range} setRange={setRange} max={max} min={min} />
+          <div className=" col-sm-6 col-md-4 col-lg-3 ">
+           <div className="filtered_section px-2 py-3 rounded">
+           <Search search={search} setSearch={setSearch} />
+           <Range range={range} setRange={setRange} max={max} min={min} />
             <Select select={select} setSelect={setSelect} />
             <Sort sort={sort} setSorted={setSorted} />
-            <Search search={search} setSearch={setSearch} />
+          
             <Checkboxes
               setCheckedValue={setCheckedValue}
               checkedValue={checkedValue}
             />
+           </div>
           </div>
           <div className="col-sm-6 col-md-8 col-lg-9">
             <div className="row row-cols-1 gy-3 row-cols-sm-1 row-cols-md-2  row-cols-lg-3">

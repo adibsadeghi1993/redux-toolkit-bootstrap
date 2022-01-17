@@ -12,8 +12,8 @@ import { getProductsFromLocalStorage, getTotalPriceFromLocalStorage } from "../.
 const CartItems = () => {
     const dispatch = useDispatch()
 
-    const {cartItems:allProducts} = useSelector(state => state.products)
-  const  cartItems  =allProducts;
+    const {cartItems} = useSelector(state => state.products)
+ 
 //   const cartItems=getProductsFromLocalStorage()
   console.log(CartItem)
   

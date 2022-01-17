@@ -26,7 +26,7 @@ const Cart = ({desc,mainPrice,dPrice,id,product}) => {
         <div class="product_container mb-2 d-flex justify-content-center ">
      
           <img
-            style={{ width: "60%" }}
+            style={{ width: "55%" }}
             src={images[id-1]}
             class="card-img-top  "
             alt="..."

@@ -18,7 +18,7 @@ const Test = ({range,setRange,max,min}) => {
  
   
     return (
-    <div>
+    <div className="mt-3">
         <Box sx={{ width: "100%" }}>
       <Slider
         getAriaLabel={() => 'Temperature range'}
