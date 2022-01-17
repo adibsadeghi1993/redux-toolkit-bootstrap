@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
+
 import "./Header.css";
 import { getProductsFromLocalStorage } from "../../services/ProductServices";
 import { useSelector } from "react-redux";
@@ -10,8 +11,8 @@ const Header = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div className="container-fluid d-flex flex-row-reverse">
-          <Link className="navbar-brand" to="/">
-            <span className="me-2 "> فروشگاه</span>
+          <Link  className="navbar-brand" to="/">
+            <span className="me-2 mb-0 "> فروشگاه</span>
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,32 +44,9 @@ const Header = () => {
            <div></div>
            <div className="offcanvas-body">
            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+             
               <li className="nav-item ms-2">
-                <Link className="nav-link active" aria-current="page" to="/">
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="23"
-                      height="23"
-                      fill="currentColor"
-                      class="bi bi-house"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
-                      />
-                    </svg>
-                  </span>
-                  <span className="ms-1"> خانه</span>
-                </Link>
-              </li>
-              <li className="nav-item ms-2">
-                <Link className="nav-link" to="/cartItems">
+                <NavLink className={(navData)=>navData.isActive?"nav-link active":"nav-link"} to="/cartItems">
                   <span className="position-relative">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -85,12 +63,13 @@ const Header = () => {
                     </span>:null}
                   </span>
                   <span className="ms-1">سبد خرید</span>
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item dropdown ms-2 ">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="/"
+                <NavLink
+
+                  className={(navData)=>navData.isActive?"nav-link active dropdown-toggle":"nav-link dropdown-toggle"}
+                  to="/signup"
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -113,17 +92,17 @@ const Header = () => {
                     </svg>
                   </span>
                   <span className="ms-1">ورود به حساب کاربری</span>
-                </Link>
+                </NavLink>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <Link className="dropdown-item" to="/signup">
+                    <NavLink className="dropdown-item" to="/signup">
                       عضویت
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/login">
+                    <NavLink className="dropdown-item" to="/login">
                       ورود
-                    </Link>
+                    </NavLink>
                   </li>
                 </ul>
               </li>
