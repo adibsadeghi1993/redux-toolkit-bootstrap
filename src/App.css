@@ -1,7 +1,15 @@
-.*{
+*{
   box-sizing: border-box;
   margin: 0 ;
   padding: 0;
+}
+
+@font-face {
+  font-family: "iranSans";
+  src: url("./assets/fonts/IRANYekanMedium.ttf");
+}
+body{
+  font-family: "iranSans" !important;
 }
 
 .range{
