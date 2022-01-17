@@ -40,7 +40,7 @@ export const productList=[
         mainPrice:85,
         dPrice:73,
         src:"imagefour",
-        category:"electonic"
+        category:"sport"
 
     },
     {
@@ -73,7 +73,7 @@ export const productList=[
         mainPrice:63,
         dPrice:33,
         src:"imageseven",
-        category:"sport"
+        category:"electonic"
 
     },
     {
@@ -84,7 +84,7 @@ export const productList=[
         mainPrice:79,
         dPrice:26,
         src:"imageeight",
-        category:"sport"
+        category:"electonic"
 
     },
     {

@@ -12,8 +12,6 @@ import signupImage from "../../../assets/Peach-Illustration-System@4x-p4dbc2wf9k
 
 const validationSchema = Yup.object({
   name: Yup.string()
-    .min(3, "is short")
-    .max(15, "is long")
     .required("نام و نام خانوادگی الزامی است"),
   email: Yup.string().email("ایمیل صحیح نیست").required("ایمیل الزامی است"),
   password: Yup.string()
@@ -88,12 +86,12 @@ const Signup = () => {
             </div>
           )}
           {userInfo.erroeMessage && (
-            <div className="bg-danger  text-white py-2 rounded my-2">
+            <div className="bg-danger text-center text-white py-2 rounded my-2">
               {userInfo.erroeMessage}
             </div>
           )}
           {userInfo.successMessage && (
-            <div className="bg-primary text-center text-white py-2 rounded my-2">
+            <div className="bg-sucess text-center text-white py-2 rounded my-2">
               {userInfo.successMessage}
             </div>
           )}
