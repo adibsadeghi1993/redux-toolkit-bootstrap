@@ -14,6 +14,7 @@ import {
 } from "../redux/reducers/ProductReducer";
 import Cart from "../components/Cart";
 import { productList } from "../productlist/productList";
+import SwitchComponent from "../components/Switch";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -57,7 +58,7 @@ const Home = () => {
       <div className="container-xxl  px-4  mt-4 ">
         <div className="row ">
           <div className=" col-sm-6 col-md-4 col-lg-3 ">
-           <div className="filtered_section px-2 py-3 rounded">
+           <div className="filtered_section text-white px-2 py-3 rounded">
            <Search search={search} setSearch={setSearch} />
            <Range range={range} setRange={setRange} max={max} min={min} />
             <Select select={select} setSelect={setSelect} />
@@ -67,10 +68,11 @@ const Home = () => {
               setCheckedValue={setCheckedValue}
               checkedValue={checkedValue}
             />
+           
            </div>
           </div>
           <div className="col-sm-6 col-md-8 col-lg-9">
-            <div className="row row-cols-1 gy-3 row-cols-sm-1 row-cols-md-2  row-cols-lg-3">
+            <div className="row row-cols-1  gy-3 row-cols-sm-1 row-cols-md-2  row-cols-lg-3">
               {filteredProducts.map((p) => {
                 return (
                   <Cart

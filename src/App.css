@@ -24,7 +24,8 @@ body{
 
 .filtered_section{
   border: none;
-  background-color:#dbe3eb;
+  background-color:#bdbdbd;
+  margin-bottom: 10px;
 }
 
 @media(min-width:768px){

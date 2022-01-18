@@ -28,6 +28,7 @@ const Test = ({range,setRange,max,min}) => {
         getAriaValueText={valuetext}
         min={min}
         max={max}
+        style={{color:"red"}}
        
       />
     </Box>
