@@ -13,7 +13,7 @@ const CartItems = () => {
     const dispatch = useDispatch()
 
     const {cartItems} = useSelector(state => state.products)
- 
+  
 //   const cartItems=getProductsFromLocalStorage()
   console.log(CartItem)
   
@@ -26,7 +26,7 @@ const CartItems = () => {
   return (
     <div>
       <Header />
-     <div className="container-xxl px-md-4 mt-4">
+     <div  className="container-xxl px-md-4 mt-4">
      {cartItems?.length === 0 ? (
         <div>
             <p>شما محصولی انتخاب نکرده اید.</p>

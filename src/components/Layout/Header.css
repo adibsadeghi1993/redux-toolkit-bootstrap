@@ -1,3 +1,11 @@
 .offcanvas-start{
     width: 250px !important;
 }
+.navbar-toggler{
+    outline: none !important;
+    border: none !important;
+}
+.navbar-toggler:focus,.navbar-toggler:hover{
+    outline: none !important;
+    border: none !important;
+}

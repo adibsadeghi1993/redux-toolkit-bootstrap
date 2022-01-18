@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Signup from "./components/Auth/Signup/Signup";
 import Login from "./components/Auth/Login/Login";
-import { useDispatch} from "react-redux"
+import { useDispatch,useSelector} from "react-redux"
 import { getDataFromLocalStorage } from "./services/AuthServices";
 import { loginByLocalStorage } from "./redux/reducers/AuthReducer";
 import Test from "./components/Range";
@@ -16,12 +16,14 @@ import Checkout from "./components/Checkout";
 
 function App() {
   const dispatch = useDispatch()
+  const { mode } = useSelector((state) => state.switch);
   useEffect(() => {
    const data= getDataFromLocalStorage()
    dispatch(loginByLocalStorage(data))
+   
   }, [])
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor:`${mode?"#263238":"#eceff1"}`}}>
      <Routes>
      <Route path="/" element={<Home />}/>
      <Route path="/signup" element={<Signup />}/>

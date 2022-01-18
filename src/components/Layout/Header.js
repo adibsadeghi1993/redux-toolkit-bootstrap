@@ -44,7 +44,7 @@ const Header = () => {
             id="navbarSupportedContent"
           >
            <div></div>
-           <div className="offcanvas-body">
+           <div style={{backgroundColor:`${mode?"#212529":"#f8f9fa"}`}} className="offcanvas-body">
            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
              
               <li className="nav-item ms-2">
