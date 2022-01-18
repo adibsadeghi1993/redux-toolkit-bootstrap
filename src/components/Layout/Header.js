@@ -107,11 +107,14 @@ const Header = () => {
                   </li>
                   
                 </ul>
+                
               </li>
               <li> <SwitchComponent/></li>
             </ul>
            </div>
+        
           </div>
+         
         </div>
       </nav>
     </div>
