@@ -8,9 +8,10 @@ import SwitchComponent from "../Switch";
 const Header = () => {
   // const  cartItems  = getProductsFromLocalStorage();
   const {cartItems} = useSelector(state => state.products)
+  const {mode} = useSelector(state => state.switch)
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light ">
+      <nav className={`navbar navbar-expand-lg ${mode?"navbar-dark bg-dark":"navbar-light bg-light"} `}>
         <div className="container-fluid d-flex flex-row-reverse">
           <Link  className="navbar-brand" to="/">
             <span className="me-2 mb-0 "> فروشگاه</span>

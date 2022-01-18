@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const switchSlice = createSlice({
   name: "switch",
   initialState: {
-    mode: false,
+    mode: true,
   },
 
   reducers: {

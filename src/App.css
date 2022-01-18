@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "iranSans";
-  src: url("./assets/fonts/IRANYekanMedium.ttf");
+  src: url("./assets/fonts/IRANSansDN_Light.ttf");
 }
 body{
   font-family: "iranSans" !important;
@@ -24,7 +24,7 @@ body{
 
 .filtered_section{
   border: none;
-  background-color:#bdbdbd;
+ 
   margin-bottom: 10px;
 }
 

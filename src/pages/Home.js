@@ -19,7 +19,8 @@ import SwitchComponent from "../components/Switch";
 const Home = () => {
   const dispatch = useDispatch();
   const { products,filteredProducts } = useSelector((state) => state.products);
-
+  const { mode } = useSelector((state) => state.switch);
+  console.log(mode)
   const [checkedValue, setCheckedValue] = useState([]);
   const [select, setSelect] = useState("");
   const [sort, setSorted] = useState("");
@@ -53,12 +54,12 @@ const Home = () => {
     );
   }, [checkedValue, select, range, search, sort]);
   return (
-    <div className="app">
+    <div style={{backgroundColor:`${mode?"#263238":"#eceff1"}`}}>
       <Header />
       <div className="container-xxl  px-4  mt-4 ">
         <div className="row ">
           <div className=" col-sm-6 col-md-4 col-lg-3 ">
-           <div className="filtered_section text-white px-2 py-3 rounded">
+           <div style={{backgroundColor:`${mode?"#455a64":"#e0e0e0"}`,color:`${mode?"white":"black"}`}} className="filtered_section  px-2 py-3 rounded">
            <Search search={search} setSearch={setSearch} />
            <Range range={range} setRange={setRange} max={max} min={min} />
             <Select select={select} setSelect={setSelect} />

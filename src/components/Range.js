@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-
+import { useDispatch, useSelector } from "react-redux";
 
 function valuetext(value) {
   return `${value}°C`;
@@ -9,7 +9,7 @@ function valuetext(value) {
 
 const Test = ({range,setRange,max,min}) => {
 
-
+  const { mode } = useSelector((state) => state.switch);
 
   const handleChange = (event, newValue) => {
     setRange(newValue);
@@ -28,11 +28,11 @@ const Test = ({range,setRange,max,min}) => {
         getAriaValueText={valuetext}
         min={min}
         max={max}
-        style={{color:"red"}}
+        style={{color:`${mode?"#ffc107":"blue"}`}}
        
       />
     </Box>
-    <p> <span>رنج قیمت انتخابی شما</span><span className="ms-2 btn btn-outline-primary">{range[0]}-{range[1]}</span></p>
+    <p> <span>رنج قیمت انتخابی شما</span><span className={`btn ms-2 ${mode?"btn-outline-warning":"btn-outline-primary"}`}>{range[0]}-{range[1]}</span></p>
     </div>
     );
   };

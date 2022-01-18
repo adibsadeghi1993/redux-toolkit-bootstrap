@@ -2,8 +2,9 @@ import { styled } from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch, { SwitchProps } from '@mui/material/Switch';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
+
+import { useDispatch, useSelector } from "react-redux";
+import { switchMode } from '../redux/reducers/ModeReducer';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -53,15 +54,19 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   }));
 
 const SwitchComponent = () => {
+    const dispatch = useDispatch()
+    const { mode } = useSelector((state) => state.switch);
     const colorHandler=(e)=>{
-     console.log(e.target.checked)
+    
+     dispatch(switchMode(e.target.checked))
     }
     return (
         <div>
             <FormGroup>
       <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }}  defaultChecked />}
-        label="Mode"
+        control={<MaterialUISwitch style={{marginTop:"2px"}} value={mode}  checked={mode} />}
+       label=""
+        style={{marginTop:"4px"}}
         onChange={colorHandler}
       />
       
